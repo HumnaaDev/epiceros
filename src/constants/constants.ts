@@ -1,0 +1,1 @@
+export const ERROR_STATUS_CODE = [401, 400, 403, 404, 409, 500, 501, 502]
