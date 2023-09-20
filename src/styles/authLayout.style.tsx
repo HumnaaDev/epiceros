@@ -16,6 +16,9 @@ export const AuthLayout = styled(
         '.text-white': {
             color: theme.palette.primary.contrastText
         },
+        '.text-blue': {
+            color: theme.palette.primary.dark
+        },
         '.list': {
             paddingLeft: 15
         },
