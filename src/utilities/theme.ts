@@ -18,7 +18,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-const theme = createTheme({
+export const baseTheme = createTheme({
   palette: {
     primary: {
       main: '#357EDD',
@@ -54,6 +54,11 @@ const theme = createTheme({
       fontSize: 18,
       lineHeight: '24px',
       fontWeight: 700
+    },
+    body2: {
+      fontSize: 14,
+      lineHeight: '20px',
+      fontWeight: 400
     },
     subtitle1: {
       fontSize: 16,
@@ -100,5 +105,3 @@ const theme = createTheme({
     }
   }
 })
-
-export default theme
