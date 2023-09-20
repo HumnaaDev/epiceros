@@ -28,8 +28,13 @@ export const AuthLayout = styled(
             flexGrow: 1,
             maxWidth: 600,
             '.MuiFormControlLabel-label': {
-                fontSize: theme.typography.body2.fontSize,
+                fontSize: theme.typography.subtitle2.fontSize,
                 lineHeight: theme.typography.body2.lineHeight
+            },
+            '.error': {
+                color: 'red',
+                marginLeft: 4,
+                fontSize: theme.typography.body2.fontSize,
             }
         },
         

@@ -12,27 +12,27 @@ import { EMAIL_REGEX } from "@/utilities/regex"
 const RegisterFormSchema = yup.object({
     name: yup
       .string()
-      .required("Name is required")
-      .max(20, 'Name character limit is 300'),
+      .required("name is required.")
+      .max(20, 'name character limit is 300'),
     email: yup
       .string()
-      .required("Email is required")
-      .matches(EMAIL_REGEX, 'Valid Email is Required.')
+      .required("email is required.")
+      .matches(EMAIL_REGEX, 'valid email is required.'),
+    terms: yup.boolean()
   })
 
 export default function Register() {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
       } = useForm<IRegisterForm>({
-        defaultValues: {name: '', email: ''},
+        defaultValues: {name: '', email: '', terms: false},
         resolver: yupResolver(RegisterFormSchema),
         mode: "all",
     })
 
-      const onSubmit: SubmitHandler<IRegisterForm> = (data) => console.log(data)
+    const onSubmit: SubmitHandler<IRegisterForm> = (data) => console.log(data)
 
     return (
     <div>
@@ -53,7 +53,7 @@ export default function Register() {
                     <span className="error">{errors.email?.message}</span>
                 </Box>
                 <Box mb={2}>
-                    <FormControlLabel control={<Checkbox size="small" />} label="I agree to the terms" />
+                    <FormControlLabel control={<Checkbox size="small" {...register("terms")} name="terms"/>} label="I agree to the terms" />
                 </Box>
                 <Box>
                     <Button size="large" variant="contained" type="submit">I'm in, sign me up!</Button>
