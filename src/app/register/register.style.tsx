@@ -1,8 +1,6 @@
 import { Box, type BoxProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const LeftSideImage = '/left-bg-img.svg' 
-
 export const AuthLayout = styled(
     Box,
     {}
@@ -21,22 +19,6 @@ export const AuthLayout = styled(
         },
         '.list': {
             paddingLeft: 15
-        },
-        '.left-area': {
-            maxWidth: 250,
-            width: '100%',
-            padding: 40,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            backgroundColor: theme.palette.primary.main,
-            flexShrink: 0,
-            backgroundImage: `url(${LeftSideImage})`,
-            backgroundPosition: 'center center',
-            backgroundSize: 'contain',
-            [theme.breakpoints.down('md')]: {
-                maxWidth: '100%'
-            }
         },
         '.right-area': {
             padding: 40,

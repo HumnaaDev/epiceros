@@ -1,5 +1,6 @@
 "use client"
 
+import { Sidebar } from "@/components/sidebar/sidebar"
 import { AuthLayout } from "./register.style"
 import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material"
 
@@ -7,17 +8,7 @@ export default function Register() {
   return (
     <div>
        <AuthLayout className="auth-layout">
-          <Box className="left-area">
-            <Typography className="text-white" variant="h2" component="h2">Join the team</Typography>
-            <ul className="list text-white">
-              <li>Alexandre</li>
-              <li>Christian</li>
-              <li>Filip</li>
-              <li>Hjalmar</li>
-              <li>Joakim</li>
-              <li>Samuel</li>
-            </ul>
-          </Box>
+        <Sidebar />
           <Box className="right-area">
             <Typography variant="h3" component='h3' mb={4} className="text-blue">Register</Typography>
             <Box className="form-area">
