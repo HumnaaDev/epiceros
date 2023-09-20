@@ -7,7 +7,7 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { IRegisterForm } from "./register.type"
 import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
-import { EMAIL_REGEX } from "@/utilities/regex"
+import { EMAIL_REGEX } from "@/constants"
 
 const RegisterFormSchema = yup.object({
     name: yup
