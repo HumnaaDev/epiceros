@@ -31,24 +31,19 @@ class Http {
       }
     })
     return await response
-      .then((resp) => {
+    .then((resp) => {
         return resp.data
-      })
-      .catch((error) => {
-        const {
-          data: {
-            data: { message }
-          },
-          status
-        } = error.response
+    })
+    .catch((error) => {
+        const { data, status } = error.response
         throw new AppError(
-          `Http.post(${this._baseUrl}/${url})`,
-          ERROR_STATUS_CODE.includes(status) ? message : NETWORK_ERROR,
-          error.code,
-          error.response.status,
-          { params, options, error }
+            `Http.post(${this._baseUrl}/${url})`,
+            ERROR_STATUS_CODE.includes(status) ? data?.message : error.message,
+            error.code,
+            error.response.status,
+            { params, options }
         )
-      })
+    })
   }
 
   public async post<T>(url: string, body?: any, options?: any): Promise<T> {
