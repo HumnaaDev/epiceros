@@ -27,6 +27,7 @@ export const AuthLayout = styled(
             justifyContent: 'center',
             flexGrow: 1,
             maxWidth: 600,
+            height: '100vh',
             '.MuiFormControlLabel-label': {
                 fontSize: theme.typography.subtitle2.fontSize,
                 lineHeight: theme.typography.body2.lineHeight
