@@ -1,1 +1,0 @@
-export const NETWORK_ERROR = "Something went wrong."
