@@ -1,7 +1,7 @@
 import { Box, type BoxProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-const LeftSideImage = '/left-bg-img.svg' 
+import LeftSideImage from '../../../public/assets/images/left-bg-img.svg' 
 
 export const SidebarWrapper = styled(
     Box,
@@ -16,7 +16,7 @@ export const SidebarWrapper = styled(
         justifyContent: 'center',
         backgroundColor: theme.palette.primary.main,
         flexShrink: 0,
-        backgroundImage: `url(${LeftSideImage})`,
+        backgroundImage: `url(${LeftSideImage.src})`,
         backgroundPosition: 'center center',
         backgroundSize: 'contain',
         [theme.breakpoints.down('md')]: {
