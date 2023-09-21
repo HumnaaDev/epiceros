@@ -3,6 +3,8 @@
 import "../styles/_global.scss"
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles"
 import { baseTheme } from "@/utilities/theme"
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 export default function RootLayout({
   children,
@@ -12,9 +14,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <MuiThemeProvider theme={baseTheme}>
-          {children}
-        </MuiThemeProvider>
+        <QueryClientProvider client={new QueryClient()}>
+          <MuiThemeProvider theme={baseTheme}>
+            {children}
+          </MuiThemeProvider>
+          <ReactQueryDevtools initialIsOpen={false} position='bottom-left'/>
+        </QueryClientProvider>
       </body>
     </html>
   )
