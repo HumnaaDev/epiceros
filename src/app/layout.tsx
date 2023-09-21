@@ -5,6 +5,7 @@ import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles"
 import { baseTheme } from "@/utilities/theme"
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import StoreProvider from "@/store/storeContext"
 
 export default function RootLayout({
   children,
@@ -14,12 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <QueryClientProvider client={new QueryClient()}>
-          <MuiThemeProvider theme={baseTheme}>
-            {children}
-          </MuiThemeProvider>
-          <ReactQueryDevtools initialIsOpen={false} position='bottom-left'/>
-        </QueryClientProvider>
+        <MuiThemeProvider theme={baseTheme}>
+          <StoreProvider>
+            <QueryClientProvider client={new QueryClient()}>
+              {children}
+            <ReactQueryDevtools initialIsOpen={false} position='bottom-left'/>
+            </QueryClientProvider>
+          </StoreProvider>
+        </MuiThemeProvider>
       </body>
     </html>
   )
