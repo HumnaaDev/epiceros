@@ -1,7 +1,7 @@
 import { Box, type BoxProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const AuthLayout = styled(
+export const RegisterLayout = styled(
     Box,
     {}
 )<Partial<BoxProps>>(({ theme }) => ({

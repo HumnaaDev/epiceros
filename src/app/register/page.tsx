@@ -1,7 +1,7 @@
 "use client"
 
 import { Sidebar } from "@/components/sidebar/sidebar"
-import { AuthLayout } from "./register.style"
+import { RegisterLayout } from "./register.style"
 import { Box, Button, Checkbox, FormControlLabel, TextField, Typography } from "@mui/material"
 import { useForm, SubmitHandler, Controller } from "react-hook-form"
 import { IRegisterForm } from "./register.type"
@@ -43,25 +43,25 @@ export default function Register() {
 
   return (
     <div>
-       <AuthLayout className="auth-layout">
+       <RegisterLayout className="auth-layout">
         <Sidebar />
           <form onSubmit={handleSubmit(onSubmit)}>
             <Box className="right-area">
-                <Typography variant="h3" component='h3' mb={4} className="text-blue">Register</Typography>
-                <Box className="form-area">
+              <Typography variant="h3" component='h3' mb={4} className="text-blue">Register</Typography>
+              <Box className="form-area">
                 <Typography variant="h4" component='h4' className="text-blue">Team Player - Be Positive - Beat yesterday</Typography>
                 <Typography className="text-muted" variant="body2" component='span' display={'block'} mt={2}>Together we re-define the experience of online gaming through gamification and novel technical solution.</Typography>
                 <Box mb={2} mt={3}>
-                <Controller
-                  control={control}
-                  name="name"
-                  render={({ field }) => (
-                    <>
-                      <TextField {...field} name="name" size="small" variant="outlined" label="Name" placeholder="Name" fullWidth type="text" />
-                      <span className="error">{errors.name?.message}</span>
-                    </>
-                  )}
-                />
+                  <Controller
+                    control={control}
+                    name="name"
+                    render={({ field }) => (
+                      <>
+                        <TextField {...field} name="name" size="small" variant="outlined" label="Name" placeholder="Name" fullWidth type="text" />
+                        <span className="error">{errors.name?.message}</span>
+                      </>
+                    )}
+                  />
                 </Box>
                 <Box mb={2}>
                   <Controller
@@ -85,12 +85,12 @@ export default function Register() {
                     />
                 </Box>
                 <Box>
-                    <Button size="large" variant="contained" type="submit">I'm in, sign me up!</Button>
+                  <Button size="large" variant="contained" type="submit">I'm in, sign me up!</Button>
                 </Box>
-                </Box>
+              </Box>
             </Box>
           </form>
-       </AuthLayout>
+       </RegisterLayout>
     </div>
   )
 }
