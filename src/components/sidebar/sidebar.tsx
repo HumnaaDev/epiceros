@@ -1,18 +1,27 @@
 import { useGetTeamData } from "@/services/register"
 import { SidebarWrapper } from "./sidebar.style"
 import { Typography } from "@mui/material"
+import { useStoreContext } from "@/store/storeContext"
+import { useEffect } from "react"
 
 export const Sidebar = () => {
     const { data } = useGetTeamData()
+    const { states: { team }, actions: { setTeam } } = useStoreContext()
+
+    useEffect(() => {
+        if(data) {
+            setTeam(data?.team)
+        }
+    }, [data])
 
     return (
         <SidebarWrapper className="left-area">
             <Typography className="text-white" variant="h2" component="h2">Join the team</Typography>
-            <ul className="list text-white">
-                {
-                    data?.team?.map((name: string, index: number) => (<li key={`${name}-${index}`}>{name}</li>))
-                }
-            </ul>
+                <ul className="list text-white">
+                    {
+                        team?.map((name: string, index: number) => (<li key={`${name}-${index}`}>{name}</li>))
+                    }
+                </ul>
         </SidebarWrapper>
     )
 }

@@ -10,7 +10,7 @@ export interface StoreContextType {
     team: ITeam
   }
   actions: {
-    setTeam: (data: string) => void
+    setTeam: (data: string[]) => void
   }
 }
 

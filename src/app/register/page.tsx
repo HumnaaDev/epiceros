@@ -25,6 +25,7 @@ const RegisterFormSchema = yup.object({
 export default function Register() {
     const {
         control,
+        reset,
         handleSubmit,
         formState: { errors },
       } = useForm<IRegisterForm>({
@@ -35,7 +36,10 @@ export default function Register() {
 
     const { actions: { setTeam } } = useStoreContext()
 
-    const onSubmit: SubmitHandler<IRegisterForm> = (data) => setTeam(data.name)
+    const onSubmit: SubmitHandler<IRegisterForm> = (data) => {
+      setTeam([data.name])
+      reset()
+    }
 
   return (
     <div>

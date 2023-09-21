@@ -12,13 +12,13 @@ const reducer = (
 ): typeof initialState => {
   switch (action.type) {
     case UPDATE_TEAM:
-      return [...state, action.payload]
+      return [...state, ...action.payload]
   }
   return state
 }
 
 export const updateTeam = (
-  data: string,
+  data: string[],
   dispatch: Dispatch<ReducerAction<typeof reducer>>
 ): void => {
     dispatch({ type: UPDATE_TEAM, payload: data })
