@@ -44,7 +44,7 @@ describe('Register Component', () => {
         expect(await screen.findByText('name is required.')).toBeDefined();
         expect(await screen.findByText('email is required.')).toBeDefined();
         // Fill in invalid email format
-        fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'invalid-email' } });
+        fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'invalid email' } });
         fireEvent.click(screen.getByText("I'm in, sign me up!"));
         // Ensure error message for invalid email format
         expect(await screen.findByText('valid email is required.')).toBeDefined();
@@ -63,8 +63,8 @@ describe('Register Component', () => {
             </QueryClientProvider>  
         );
         // Fill in valid input
-        fireEvent.change(screen.getByLabelText('Name'), { target: { value: 'John Doe' } });
-        fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'john@example.com' } });
+        fireEvent.change(screen.getByLabelText('Name'), { target: { value: 'Humna Aleem' } });
+        fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'Humna.aleem111@gmail.com' } });
         fireEvent.click(screen.getByLabelText('I agree to the terms'));
         // Submit the form
         fireEvent.click(screen.getByText("I'm in, sign me up!"));
