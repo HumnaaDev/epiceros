@@ -7,6 +7,10 @@ import { baseTheme } from '@/utilities/theme';
 import StoreProvider from "@/store/storeContext"
 
 describe('Sidebar Component', () => {
+    afterEach(() => {
+        // Clean up and reset mocks after each test
+        jest.clearAllMocks();
+      });
     it('renders the component correctly', () => {
         let queryClient
         queryClient = new QueryClient()
