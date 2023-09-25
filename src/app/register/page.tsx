@@ -85,7 +85,7 @@ export default function Register() {
                     />
                 </Box>
                 <Box>
-                  <Button size="large" variant="contained" type="submit">I'm in, sign me up!</Button>
+                  <Button data-testid="sign-up" size="large" variant="contained" type="submit">I'm in, sign me up!</Button>
                 </Box>
               </Box>
             </Box>
