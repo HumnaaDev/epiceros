@@ -16,10 +16,10 @@ export const Sidebar = () => {
 
     return (
         <SidebarWrapper className="left-area">
-            <Typography className="text-white" variant="h2" component="h2">Join the team</Typography>
+            <Typography data-testid="join-team" className="text-white" variant="h2" component="h2">Join the team</Typography>
                 <ul className="list text-white">
                     {
-                        team?.map((name: string, index: number) => (<li key={`${name}-${index}`}>{name}</li>))
+                        team?.map((name: string, index: number) => (<li data-testid={name} key={`${name}-${index}`}>{name}</li>))
                     }
                 </ul>
         </SidebarWrapper>
