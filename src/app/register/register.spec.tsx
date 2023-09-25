@@ -38,7 +38,7 @@ describe('Register Component', () => {
                 </MuiThemeProvider>
             </QueryClientProvider>  
         );
-        // Submit the form without filling in any fields
+        // Submit the form with empty fields
         fireEvent.click(screen.getByText("I'm in, sign me up!"));
         // Ensure error messages are displayed
         expect(await screen.findByText('name is required.')).toBeDefined();
