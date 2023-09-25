@@ -3,8 +3,8 @@ import Register from './page';
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles"
 import { render, screen, fireEvent } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { baseTheme } from '../../utilities/theme';
-import StoreProvider from "../../store/storeContext"
+import { baseTheme } from '@/utilities/theme';
+import StoreProvider from "@/store/storeContext"
 
 describe('Register Component', () => {
     it('renders the component correctly', () => {
