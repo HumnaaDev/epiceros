@@ -9,7 +9,7 @@ const useReducerActions = (): StoreContextType => {
   const [team, teamDispatch] = useReducer(teamReducer, teamInitialState)
 
   const actions = {
-    setTeam: (data: string) => {
+    setTeam: (data: string[]) => {
       updateTeam(data, teamDispatch)
     }
   }

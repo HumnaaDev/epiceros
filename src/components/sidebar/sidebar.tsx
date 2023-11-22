@@ -12,7 +12,7 @@ export const Sidebar = () => {
         if(data) {
             setTeam(data?.team)
         }
-    }, [data])
+    }, [data, setTeam])
 
     return (
         <SidebarWrapper className="left-area">
